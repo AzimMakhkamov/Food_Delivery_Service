@@ -21,6 +21,11 @@ textarea {
     display: inline-block;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 ol, ul {
     list-style-type: none;
 }
@@ -254,7 +259,7 @@ img {
 
 /* restaurants-list */
 
-.restaurants-list {
+.restaurants-list, .products-list {
     display: grid;  /*сетка*/
     grid-template-columns: repeat(3, 1fr); /*сколько колонок будет в сетке, вторым значение указывается на сколько делить (При выборе 1fr позволяем гриду
     самому распределить одинаково все элементы)*/
@@ -262,7 +267,7 @@ img {
     padding-top: 44px;
 }
 
-.restaurant {
+.restaurant, .product {
     border-radius: 7px;
     overflow: hidden;
     background: #fff;
@@ -277,8 +282,8 @@ img {
     object-position: center; /*Позиционирование объекта относительно родителя*/
 }
 
-.restaurant-content {
-    padding: 20px 23.5px 35px;
+.restaurant-content, .product-content {
+    padding: 20px 22px 35px;
 }
 
 .restaurant-content-top {
@@ -307,13 +312,13 @@ img {
     margin-top: 10px;
 }
 
-.restaurant-content-details {
+.restaurant-content-details, .products-top-details {
     display: flex;
     align-items: center;
     gap: 26px;
 }
 
-.restaurant .rating {
+.restaurant .rating, .products .rating {
     display: flex;
     gap: 7.5px;
     align-items: center;
@@ -324,15 +329,76 @@ img {
     line-height: 1.7;
 }
 
-.restaurant .description {
+.restaurant .description, .products .description {
     font-size: 18px;
     line-height: 1.7;
     color: #8c8c8c;
 }
 
-.restaurant .description > * + * {
+.restaurant .description > * + *, .products .description > * + * {
     margin-left: 10px;
 }
 .dot {
     font-weight: 900;
+}
+
+/* .restaurant-link .image {
+    transition: scale 0.3s ease-in;
+}
+
+.restaurant-link:hover .image {
+    scale: 1.2;
+} */
+
+.restaurant-link{
+    transition: all 0.3s linear;
+}
+
+.restaurant-link:hover{
+    transform: translateY(-10px);     /*Перемещение по оси Y при наведении на ссылку*/
+}
+
+.products-top {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.products-list {
+    padding: 44px 0 112px;
+}
+
+.product-image {
+    height: 212px;
+    overflow: hidden;
+}
+
+.product-title {
+    line-height: 1.7;
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.product-description {
+    font-size: 18px;
+    color: #8c8c8c;
+    margin-bottom: 24px;
+}
+
+.product-option .button {
+    display: inline-flex;
+    gap: 4px;
+    align-items: center;
+}
+
+.product-option {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.product .price {
+    font-size: 20px;
+    line-height: 1.6;
 }
